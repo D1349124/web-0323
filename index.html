@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube - 系統調度中</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <span class="play-icon">▶</span>
+            <span class="text">YouTube</span>
+        </div>
+
+        <div class="video-placeholder">
+            <div class="shimmer"></div>
+            <div class="loading-spinner"></div>
+        </div>
+
+        <h1>哎呀！影片正在重新裝填...</h1>
+        <p class="status-msg">
+            我們的維修猴子正在努力搬運伺服器。別擔心，您的播放清單很安全。
+        </p>
+
+        <div class="progress-wrapper">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <p id="timer">預計 30 秒後自動重連...</p>
+
+        <div class="interaction-zone">
+            <p>等待太無聊？幫維修猴子打氣：</p>
+            <button id="cheerBtn">🍌 給猴子香蕉 (+1)</button>
+            <p>目前體力值：<span id="score">0</span></p>
+        </div>
+
+        <button class="retry-btn" onclick="location.reload()">手動重試</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
