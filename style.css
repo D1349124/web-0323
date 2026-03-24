@@ -1,6 +1,5 @@
-/* 全域深色模式設定 */
 body {
-    background-color: #0f0f0f; 
+    background-color: #0f0f0f;
     color: white;
     font-family: "Roboto", Arial, sans-serif;
     display: flex;
@@ -17,25 +16,29 @@ body {
     max-width: 600px;
 }
 
-/* YouTube Logo 風格 */
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 24px;
+/* Logo 樣式 */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 8px;
+}
+
+.yt-logo-pill {
+    background-color: #FF0000;
+    width: 60px;
+    height: 42px;
+    border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.play-icon {
-    background-color: #FF0000;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 6px;
-    margin-right: 8px;
-}
+.play-triangle { color: white; font-size: 22px; margin-left: 3px; }
+.yt-text { font-size: 24px; font-weight: 700; letter-spacing: -1.2px; }
 
-/* 影片模擬器與轉圈動畫 */
+/* --- 影片背景與轉圈動畫 --- */
 .video-placeholder {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -46,10 +49,18 @@ body {
     margin-bottom: 24px;
 }
 
+#bgVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 確保影片鋪滿 */
+    opacity: 0.5; /* 調暗影片，讓紅色轉圈更明顯 */
+}
+
 .loading-spinner {
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 10;
     width: 50px;
     height: 50px;
     border: 4px solid rgba(255, 255, 255, 0.1);
@@ -63,7 +74,7 @@ body {
     to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* 進度條樣式 */
+/* 進度條 */
 .progress-wrapper {
     background-color: #333;
     height: 4px;
@@ -79,45 +90,20 @@ body {
     transition: width 1s linear;
 }
 
-/* 導航區塊與按鈕群組 */
-.navigation-zone {
-    margin: 20px 0;
-    padding: 10px;
-}
-
-.button-group {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-}
-
-/* --- 藥丸型黑底按鈕 (重點) --- */
+/* 藥丸型按鈕 */
 .yt-dark-btn {
-    background-color: #2a2a2a; /* 深灰色底 */
+    background-color: #272727;
     color: #f1f1f1;
     border: none;
     padding: 10px 24px;
-    border-radius: 20px; /* 圓角藥丸狀 */
+    border-radius: 20px;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
-    transition: background-color 0.2s ease; /* 平滑變色 */
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    transition: background 0.2s;
 }
 
-/* 懸停效果：背景變亮 */
-.yt-dark-btn:hover {
-    background-color: #3f3f3f; 
-}
+.yt-dark-btn:hover { background-color: #3f3f3f; }
 
-/* 點擊效果：輕微縮小 */
-.yt-dark-btn:active {
-    transform: scale(0.96);
-}
-
-/* 重新載入按鈕 (白底) */
 .retry-btn {
     background-color: #fff;
     color: #000;
@@ -126,15 +112,10 @@ body {
     border-radius: 24px;
     font-weight: bold;
     cursor: pointer;
-    font-size: 16px;
     margin-top: 10px;
 }
 
-.retry-btn:hover {
-    background-color: #e6e6e6;
-}
-
 .divider { border: 0; border-top: 1px solid #333; margin: 30px 0; }
-.status-msg { color: #aaa; font-size: 15px; }
-#timer { color: #aaa; font-size: 14px; margin-top: 8px; }
+.status-msg { color: #aaa; }
+#timer { color: #aaa; font-size: 14px; }
 .footer-msg { font-size: 12px; color: #555; margin-top: 40px; }
