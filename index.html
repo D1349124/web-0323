@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube - 系統調度中</title>
+    <title>(1) YouTube - 系統調度中</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,13 +14,12 @@
         </div>
 
         <div class="video-placeholder">
-            <div class="shimmer"></div>
             <div class="loading-spinner"></div>
         </div>
 
         <h1>哎呀！影片正在重新裝填...</h1>
         <p class="status-msg">
-            我們的維修猴子正在努力搬運伺服器。別擔心，您的播放清單很安全。
+            伺服器目前忙線中，別擔心，您的播放清單非常安全。
         </p>
 
         <div class="progress-wrapper">
@@ -28,13 +27,19 @@
         </div>
         <p id="timer">預計 30 秒後自動重連...</p>
 
-        <div class="interaction-zone">
-            <p>等待太無聊？幫維修猴子打氣：</p>
-            <button id="cheerBtn">🍌 給猴子香蕉 (+1)</button>
-            <p>目前體力值：<span id="score">0</span></p>
+        <hr class="divider">
+
+        <div class="navigation-zone">
+            <p>暫時無法載入影片？您可以：</p>
+            <div class="button-group">
+                <button id="homeBtn" class="yt-dark-btn">首頁</button>
+                <button id="likedBtn" class="yt-dark-btn">喜歡的影片</button>
+            </div>
         </div>
 
-        <button class="retry-btn" onclick="location.reload()">手動重試</button>
+        <button class="retry-btn" onclick="location.reload()">重新載入</button>
+        
+        <p class="footer-msg">如果問題持續存在，請稍後再試。感謝您的耐心。</p>
     </div>
 
     <script src="script.js"></script>
